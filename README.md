@@ -9,4 +9,7 @@ ScriptedUpdates no
 
 ## Sample docker line
 docker run --port 8085:80 -d ericschultz/clamav-freshclam-cache:latest
-# clamav-freshclam-cache
+
+## Persistance
+So you COULD add a volume for /var/lib/clamav so that the initial download does not have to happen every time.
+But... I've never seen that as being a big deal.
