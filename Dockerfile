@@ -1,12 +1,11 @@
-FROM alpine:3.11
+FROM alpine:3.15.1
 
 RUN apk add --no-cache clamav clamav-libunrar nginx
 
 COPY entrypoint.sh /sbin
 COPY nginx.conf /etc/nginx
 
-RUN mkdir /run/nginx && \
-    mkdir /run/clamav && \
+RUN mkdir /run/clamav && \
     touch /run/nginx/junk && \
     touch /run/clamav/junk && \
     chmod -R 0777 /run/nginx /run/clamav && \
